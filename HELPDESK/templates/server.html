@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/86a929fcb7.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {font-family: 'Montserrat', sans-serif;font-size:14px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  max-width:300px;
+  padding: 0 10px;
+}
+
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <div class="display-7">TECH SUPPORT - HELPDESK SOLUTION PANEL</div>
+    </a>
+  </nav>
+<body style="text-align:center;background-color: aliceblue;">
+    <i class="fa fa-comments-o" style="font-size:300px"></i>
+    <h3 style="text-align: center;padding-top: 30px;;">ACCEPT/IGNORE CLIENT REQUESTS</h3>
+    <div class="row container" style="margin-top:30px;justify-content:center;display:flex;flex-wrap:wrap;margin-left: auto;margin-right: auto;">
+  {% for server in serv %}
+    <div class="flex-container" style="display:flex;flex-wrap: wrap;">
+    <div class="card" style="margin:10px;height:300px;width:200px;">
+      <h3>SERVER REQUEST</h3>
+      <p>Candidate: {{server.name}}</p>
+      {% if server.availability !=0 %}
+      <a class="card"  style="border-radius: 10px;text-decoration: none;color: grey;" href="/serverchat/{{server.id}}/{{server.availability}}"><i class="fa fa-comments" style="font-size:36px"></i></a>
+      
+      <a class="card"  style="margin-top:2px;border-radius: 10px;text-decoration: none;color: grey;" href="/ignore/{{server.id}}">IGNORE</a>
+   
+      {% endif %}
+      {% if server.availability ==0 %}
+      <a class="card"  style="border-radius: 10px;text-decoration: none;color: grey;" >No Client Assigned</a>
+      {% endif %}
+      </div>
+  </div>
+{% endfor %}
+</div>
+</body>
+</html>

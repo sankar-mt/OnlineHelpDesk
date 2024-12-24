@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {font-family: 'Montserrat', sans-serif;font-size:14px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  max-width:300px;
+  padding: 0 10px;
+}
+
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+      <div class="display-7">TECH SUPPORT - HELPDESK CLIENT REQUEST PANEL</div>
+  </a>
+</nav>
+<body style="text-align: center;">
+  <i class="fa fa-comments" style="font-size:300px"></i>
+  <h3 style="text-align: center;padding-top: 30px;;">SEND CLIENT REQUESTS</h3>
+ 
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div id="alertmessage" class="alert alert-success alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true" onclick="CLOSEFunction()">&times;</span>
+        </button>
+    {{message}}
+  </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+<script>
+  function CLOSEFunction(){
+    document.getElementById('alertmessage').style.display="none";
+  }
+</script>
+<div class="row container" style="margin-top:30px;justify-content:center;display:flex;flex-wrap:wrap;margin-left: auto;margin-right: auto;">
+  <div class="column">
+    <div class="card" style="min-height:180px">
+      <h3>CLIENT 1</h3>
+      <p>RoomID:1234</p>
+      <a class="card"  style="border-radius: 10px;text-decoration: none;color: grey;" href="/chat/client1/1234"><i class="fa fa-comments" style="font-size:36px"></i></a>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card" style="min-height:180px">
+      <h3>CLIENT 2</h3>
+      <p>RoomID:5678</p>
+      <a class="card"  style="border-radius: 10px;text-decoration: none;color: grey;" href="/chat/client2/5678"><i class="fa fa-comments" style="font-size:36px"></i></a>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card" style="min-height:180px">
+      <h3>CLIENT 3</h3>
+      <p>RoomID:6789</p>
+      <a class="card"  style="border-radius: 10px;text-decoration: none;color: grey;" href="/chat/client3/6789"><i class="fa fa-comments" style="font-size:36px"></i></a>
+    </div>
+  </div>
+  
+ 
+</div>
+
+</body>
+</html>
