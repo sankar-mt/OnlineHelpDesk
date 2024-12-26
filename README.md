@@ -4,6 +4,7 @@ A project aimed at implementing a simplified version of an online helpdesk syste
 
 ## Introduction
 <img width="200" alt="Screenshot 2024-12-25 at 12 54 57 AM" src="https://github.com/user-attachments/assets/e6792e6c-e2e8-43d0-b97f-724063bb7ad3" />
+
 Online HelpDesk Systems are increasingly efficient, often equipped with automated replies. However, many users prefer human interaction over machine responses. This project implements a real-time helpdesk system using WebSockets to enable seamless communication between clients and server-side users without the need for page refreshes.
 
 ### Key Features
@@ -43,6 +44,5 @@ Online HelpDesk Systems are increasingly efficient, often equipped with automate
    git clone <repository-url>
    cd HELPDESK
 
-<img width="400" alt="Screenshot 2024-12-25 at 12 54 04 AM" src="https://github.com/user-attachments/assets/a8b82b2b-22d9-458c-9398-fbd9521f3333" />
-<img width="400" alt="Screenshot 2024-12-25 at 12 50 57 AM" src="https://github.com/user-attachments/assets/9044ad42-949c-45a7-94ee-fce93d6b725c" />
-<img width="400" alt="Screenshot 2024-12-25 at 12 51 11 AM" src="https://github.com/user-attachments/assets/50bb79c3-bf44-4117-866a-5560abc4f97a" />
+<img width="800" alt="Screenshot 2024-12-25 at 12 50 57 AM" src="https://github.com/user-attachments/assets/9044ad42-949c-45a7-94ee-fce93d6b725c" />
+<img width="800" alt="Screenshot 2024-12-25 at 12 51 11 AM" src="https://github.com/user-attachments/assets/50bb79c3-bf44-4117-866a-5560abc4f97a" />
